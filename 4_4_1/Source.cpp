@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <chrono>
-#define M 1
+#define M 0
 using namespace std;
 
 template<typename Container>
@@ -27,9 +27,12 @@ void shellSort(int arr[], int N)
 			int temp = arr[i];
 
 			for (int j = i; j >= gap && arr[j - gap] > temp; j -= gap)
+			{
 				arr[j] = arr[j - gap];
 
-			arr[j] = temp;
+				arr[j] = temp;
+			}
+				
 		}
 	}
 }
